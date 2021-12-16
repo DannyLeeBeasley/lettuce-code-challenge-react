@@ -1,7 +1,8 @@
-/* Header {
+Header {
   display: flex;
   flex-direction: column;
-} */
+  background-color: green;
+}
 
 h1 {
     text-align: center;

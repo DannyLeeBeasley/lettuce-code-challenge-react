@@ -1,11 +1,11 @@
+import React from "react";
 import MainTablePage from "./components/MainTablePage/MainTablePage";
-import './App.css';
+
+import "./App.css";
 
 function App() {
   return (
-    <div className="App">
-      <MainTablePage />
-    </div>
+    <MainTablePage/>
   );
 }
 
