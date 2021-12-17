@@ -1,12 +1,10 @@
 import React from "react";
-import MainTablePage from "./components/MainTablePage/MainTablePage";
+import HomePage from "./components/HomePage/HomePage";
 
 import "./App.css";
 
 function App() {
-  return (
-    <MainTablePage/>
-  );
+  return <HomePage />;
 }
 
 export default App;

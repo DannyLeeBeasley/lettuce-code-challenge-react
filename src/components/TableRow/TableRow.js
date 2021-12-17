@@ -1,4 +1,3 @@
-import react from "react";
 import "./TableRow.css";
 
 function TableRow({ query, hits }) {
