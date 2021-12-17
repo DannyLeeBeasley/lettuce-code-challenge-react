@@ -14,8 +14,8 @@ ReactDOM.render(
     <NavBar />
     <Routes>
       <Route path="/" element={<App />} />
-      <Route path="barchart" element={<BarChart />} />?{" "}
-    </Routes>
+      <Route path="barchart" element={<BarChart />} />
+?    </Routes>
   </Router>,
   document.getElementById("root")
 );
