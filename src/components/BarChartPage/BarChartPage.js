@@ -1,12 +1,14 @@
-import react from "react";
+import React, { useState } from "react";
+import { parse } from "papaparse";
 import BarChart from "../BarChart/BarChart";
+import "./BarChartPage.css";
 
 function BarChartPage() {
   const [highlighted, setHighlighted] = useState(false);
   const [allSearches, setAllSearches] = useState([]);
 
   return (
-    <div className="main-table-page">
+    <div className="bar-chart-page">
       <div
         className={
           highlighted ? "drop-zone-file-hover-on" : "drop-zone-file-hover-off"
@@ -34,7 +36,11 @@ function BarChartPage() {
       >
         Drop CSV File Here For Bar Graph
       </div>
-      <BarChart />
+      <div>
+        <BarChart className="bar-chart" allSearches={allSearches} setAllSearches={setAllSearches} />
+      </div>
     </div>
   );
 }
+
+export default BarChartPage;

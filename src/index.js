@@ -6,7 +6,7 @@ import "./index.css";
 import App from "./App";
 import Header from "./components/Header/Header";
 import NavBar from "./components/NavBar/NavBar";
-import BarChart from "./components/BarChart/BarChart";
+import BarChartPage from "./components/BarChartPage/BarChartPage";
 
 ReactDOM.render(
   <Router>
@@ -14,8 +14,8 @@ ReactDOM.render(
     <NavBar />
     <Routes>
       <Route path="/" element={<App />} />
-      <Route path="barchart" element={<BarChart />} />
-?    </Routes>
+      <Route path="barchart" element={<BarChartPage />} />
+    </Routes>
   </Router>,
   document.getElementById("root")
 );

@@ -9,7 +9,7 @@ import {
   Legend,
 } from "chart.js";
 import { Bar } from "react-chartjs-2";
-import faker from "faker";
+// import faker from "faker";
 
 ChartJS.register(
   CategoryScale,
@@ -20,8 +20,8 @@ ChartJS.register(
   Legend
 );
 
-function BarChart() {
-
+function BarChart({ allSearches, setAllSearches }) {
+  console.log(allSearches)
   const options = {
     responsive: true,
     plugins: {
@@ -30,7 +30,7 @@ function BarChart() {
       },
       title: {
         display: true,
-        text: "World Cities Population Density",
+        text: "Top Search Hits",
       },
     },
   };

@@ -1,7 +1,5 @@
 import React, { useState } from "react";
 import { parse } from "papaparse";
-// import { BrowserRouter as Router } from "react-router-dom";
-// import { Route } from "react-router-dom/cjs/react-router-dom.min";
 import TableRow from "../TableRow/TableRow";
 import "./HomePage.css";
 
