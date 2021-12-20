@@ -1,6 +1,6 @@
 export const NavBarItems = [
   {
-    name: "HOME",
+    name: "All Searches Table",
     url: "/",
     cName: "nav-links",
   },
@@ -11,7 +11,7 @@ export const NavBarItems = [
   },
   {
     name: "Sorted By Hits Table",
-    url: "/ingredients",
+    url: "/sortedtable",
     cName: "nav-links",
   },
   {
@@ -21,7 +21,7 @@ export const NavBarItems = [
   },
   {
     name: "Zero Hits Table",
-    url: "/about",
+    url: "/zerohitstable",
     cName: "nav-links",
   },
 ];

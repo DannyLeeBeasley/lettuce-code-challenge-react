@@ -6,8 +6,19 @@ import "./HomePage.css";
 function HomePage() {
   const [highlighted, setHighlighted] = useState(false);
   const [allSearches, setAllSearches] = useState([]);
-  
 
+  function removeDuplicates(data) {
+    let searchTermHitMap = new Map();
+    data.forEach((searchObj) => {
+      searchTermHitMap.set(searchObj.query, searchObj.hits);
+    });
+    let noDuplicateArr = [];
+    searchTermHitMap.forEach((hits, query) => {
+      noDuplicateArr.push({ query, hits });
+    });
+    return noDuplicateArr;
+  }
+  
   return (
     <div className="main-table-page">
       <div

@@ -1,9 +1,18 @@
 Header {
   display: flex;
-  flex-direction: column;
-  background-color: green;
+  background-color: rgb(240, 247, 240);
+  justify-content: center;
+  align-items: center;
+}
+
+.header-image {
+  max-height: 20vh;
+  min-height: 10vh;
+  padding: 0px 10px 0px 10px;
 }
 
 h1 {
     text-align: center;
+    justify-self: center;
+    padding: 0px 10px 0px 10px;
 }

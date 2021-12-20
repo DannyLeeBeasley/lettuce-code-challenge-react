@@ -1,10 +1,9 @@
 import React, { Component } from "react";
 import { NavBarItems } from "./NavBarItems";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import "./NavBar.css";
 
 class NavBar extends Component {
-  // let navigate = useNavigate();
   state = { clicked: false };
 
   handleClick = () => {

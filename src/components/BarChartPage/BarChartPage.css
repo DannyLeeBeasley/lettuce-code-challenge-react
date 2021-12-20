@@ -1,11 +1,14 @@
 .bar-chart-page {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  padding-top: 10px;
+}
+
+#csv-drop-zone {
+  margin: auto;
 }
 
 .drop-zone-file-hover-on {
-  width: 300px;
+  width: 30%;
+  height: 20%;
   border: 5px solid green;
   background-color: lightgreen;
   padding: 50px;
@@ -15,7 +18,8 @@
 }
 
 .drop-zone-file-hover-off {
-  width: 300px;
+  width: 30%;
+  height: 20%;
   border: 5px solid gray;
   background-color: lightgray;
   padding: 50px;
@@ -24,8 +28,5 @@
   justify-content: center;
 }
 
-table,
-th,
-td {
-  border: 1px solid black;
+.bar-chart-container {
 }
