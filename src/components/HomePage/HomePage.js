@@ -1,25 +1,15 @@
 import React, { useState } from "react";
 import { parse } from "papaparse";
 import TableRow from "../TableRow/TableRow";
-import "./HomePage.css";
 import "../../TablePage.css";
+import "./HomePage.css";
 
 function HomePage() {
   const [highlighted, setHighlighted] = useState(false);
   const [allSearches, setAllSearches] = useState([]);
+  const [searchTerm, setSearchTerm] = useState("");
+  const [numberOfSearches, setNumberOfSearches] = useState("");
 
-  function removeDuplicates(data) {
-    let searchTermHitMap = new Map();
-    data.forEach((searchObj) => {
-      searchTermHitMap.set(searchObj.query, searchObj.hits);
-    });
-    let noDuplicateArr = [];
-    searchTermHitMap.forEach((hits, query) => {
-      noDuplicateArr.push({ query, hits });
-    });
-    return noDuplicateArr;
-  }
-  
   return (
     <div className="table-page">
       <div
@@ -45,11 +35,42 @@ function HomePage() {
               const result = parse(text, { header: true });
               setAllSearches(result.data);
             });
+
         }}
       >
         Drop CSV File Here
       </div>
-      <table>
+      <div className="search-term-input-container">
+        {/* <label>Search Term:</label> */}
+        <input
+          className="search-term-input"
+          type="text"
+          name="searchTermInput"
+          placeholder="Type search term to tally number of times searched"
+          value={searchTerm}
+          onChange={(e) => {
+            setSearchTerm(e.target.value);
+            console.log(searchTerm);
+            setNumberOfSearches(
+              allSearches.filter(
+                (searchObj) =>
+                  searchObj.query.toLowerCase() === searchTerm.toLowerCase()
+              ).length.toString()
+            );
+          }}
+        />
+      </div>
+      <div className="search-term-tally-container">
+        <div className="search-term-display-container">
+          <label>Search Term:</label>
+          <p>{searchTerm}</p>
+        </div>
+        <div className="search-term-count-container">
+          <label>Number Of Searches:</label>
+          <p>{numberOfSearches}</p>
+        </div>
+      </div>
+      {/* <table>
         <tr className="table-header">
           <th>Search Term</th>
           <th>Search Hits</th>
@@ -62,7 +83,7 @@ function HomePage() {
             hits={search.hits}
           />
         ))}
-      </table>
+      </table> */}
     </div>
   );
 }

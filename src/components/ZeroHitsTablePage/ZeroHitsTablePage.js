@@ -4,7 +4,6 @@ import TableRow from "../TableRow/TableRow";
 import { removeDuplicates } from "../../utils";
 import "../../TablePage.css";
 
-
 function ZeroHitsTablePage() {
   const [highlighted, setHighlighted] = useState(false);
   const [zeroHitSearches, setZeroHitSearches] = useState([]);
@@ -48,18 +47,22 @@ function ZeroHitsTablePage() {
           Drop CSV File Here
         </div>
         <table>
-          <tr className="table-header">
-            <th>Search Term</th>
-            <th>Search Hits</th>
-          </tr>
-          {zeroHitSearches.map((search) => (
-            <TableRow
-              key={search.index}
-              className="table-row"
-              query={search.query}
-              hits={search.hits}
-            />
-          ))}
+          <thead className="table-header">
+            <tr>
+              <th>Search Term</th>
+              <th>Search Hits</th>
+            </tr>
+          </thead>
+          <tbody>
+            {zeroHitSearches.map((search) => (
+              <TableRow
+                key={search.index}
+                className="table-row"
+                query={search.query}
+                hits={search.hits}
+              />
+            ))}
+          </tbody>
         </table>
       </div>
     </div>

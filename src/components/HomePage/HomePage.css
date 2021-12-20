@@ -1,31 +1,29 @@
-.table-page {
+.search-term-input-container {
+  width: 50vw;
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  justify-content: space-evenly;
 }
 
-.drop-zone-file-hover-on {
-  width: 300px;
-  border: 5px solid green;
-  background-color: lightgreen;
-  padding: 50px;
-  margin: 20px;
-  display: flex;
-  justify-content: center;
+.search-term-input {
+  width: 70%;
+  padding: 5px;
 }
 
-.drop-zone-file-hover-off {
-  width: 300px;
-  border: 5px solid gray;
-  background-color: lightgray;
-  padding: 50px;
-  margin: 20px;
-  display: flex;
-  justify-content: center;
+.search-term-tally-container {
+    width: 50%;
+    display: flex;
+    justify-content: space-evenly;
+    padding: 15px;
 }
 
-table,
-th,
-td {
-  border: 1px solid black;
+.search-term-display-container {
+    width: 50%;
+}
+
+.search-term-count-container {
+    width: 40%;
+}
+
+label {
+    font-weight: bold;
 }

@@ -20,11 +20,11 @@
 }
 
 .nav-menu {
-  display: grid;
+  display: flex;
   grid-template-columns: repeat(5, auto);
   grid-gap: 10px;
   text-align: center;
-  width: 70vw;
+  width: 90vw;
   justify-content: end;
   margin-right: 2rem;
 }

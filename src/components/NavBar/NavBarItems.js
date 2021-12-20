@@ -1,7 +1,12 @@
 export const NavBarItems = [
   {
-    name: "All Searches Table",
+    name: "Search Term Tally",
     url: "/",
+    cName: "nav-links",
+  },
+  {
+    name: "All Searches Table",
+    url: "/allsearches",
     cName: "nav-links",
   },
   {

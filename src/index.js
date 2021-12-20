@@ -10,6 +10,7 @@ import BarChartPage from "./components/BarChartPage/BarChartPage";
 import SortedTablePage from "./components/SortedTablePage/SortedTablePage";
 import ZeroHitsTablePage from "./components/ZeroHitsTablePage/ZeroHitsTablePage";
 import NoRepeatsPage from "./components/NoRepeatsPage/NoRepeatsPage";
+import AllSearchesTablePage from "./components/AllSearchesTablePage/AllSearchesTablePage";
 
 ReactDOM.render(
   <Router>
@@ -17,6 +18,7 @@ ReactDOM.render(
     <NavBar />
     <Routes>
       <Route path="/" element={<App />} />
+      <Route path="allsearches" element={<AllSearchesTablePage />} />
       <Route path="barchart" element={<BarChartPage />} />
       <Route path="sortedtable" element={<SortedTablePage />} />
       <Route path="zerohitstable" element={<ZeroHitsTablePage />} />
