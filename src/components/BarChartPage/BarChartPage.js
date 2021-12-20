@@ -49,7 +49,7 @@ function BarChartPage() {
             });
         }}
       >
-        Drop CSV File Here For Bar Graph
+        Drop CSV File Here
       </div>
       <div className="bar-chart-container">
         <BarChart

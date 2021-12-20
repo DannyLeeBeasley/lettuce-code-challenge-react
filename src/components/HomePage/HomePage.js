@@ -46,7 +46,7 @@ function HomePage() {
             });
         }}
       >
-        Drop CSV File Here For Table
+        Drop CSV File Here
       </div>
       <table>
         <tr className="table-header">

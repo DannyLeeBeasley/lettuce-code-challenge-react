@@ -36,7 +36,7 @@
 }
 
 .nav-links:hover {
-  background-color: greenyellow;
+  background-color: lightgreen;
   border-radius: 4px;
   transition: all 0.2s ease-out;
 }
@@ -86,7 +86,7 @@
   }
 
   .nav-links:hover {
-    background-color: greenyellow;
+    background-color: lightgreen;
     border-radius: 0;
   }
 
@@ -127,7 +127,7 @@
 
   .nav-links-mobile:hover {
     background: #fff;
-    color: greenyellow;
+    color: lightgreen;
     transition: 250ms;
   }
 }
