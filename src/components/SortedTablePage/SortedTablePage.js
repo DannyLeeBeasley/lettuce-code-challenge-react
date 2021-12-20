@@ -2,13 +2,15 @@ import React, { useState } from "react";
 import { parse } from "papaparse";
 import TableRow from "../TableRow/TableRow";
 import { removeDuplicates } from "../../utils";
+import "../../TablePage.css";
+
 
 function SortedTablePage() {
   const [highlighted, setHighlighted] = useState(false);
   const [sortedSearches, setSortedSearches] = useState([]);
   return (
     <div>
-      <div className="sorted-table-page">
+      <div className="table-page">
         <div
           className={
             highlighted ? "drop-zone-file-hover-on" : "drop-zone-file-hover-off"
@@ -38,7 +40,7 @@ function SortedTablePage() {
               });
           }}
         >
-          Drop CSV File Here For Table Sorted By Hits
+          Drop CSV File Here
         </div>
         <table>
           <tr className="table-header">

@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { parse } from "papaparse";
 import TableRow from "../TableRow/TableRow";
 import "./HomePage.css";
+import "../../TablePage.css";
 
 function HomePage() {
   const [highlighted, setHighlighted] = useState(false);
@@ -20,7 +21,7 @@ function HomePage() {
   }
   
   return (
-    <div className="main-table-page">
+    <div className="table-page">
       <div
         className={
           highlighted ? "drop-zone-file-hover-on" : "drop-zone-file-hover-off"

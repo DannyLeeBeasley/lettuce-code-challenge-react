@@ -22,7 +22,6 @@ ChartJS.register(
 );
 
 function BarChart({ allSearches, setAllSearches, onlySearchTermsAndHits }) {
-  console.log(onlySearchTermsAndHits);
 
   const labels = onlySearchTermsAndHits.map((searchObj) => {
     return searchObj.query;

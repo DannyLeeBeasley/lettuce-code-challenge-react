@@ -6,7 +6,7 @@ export const NavBarItems = [
   },
   {
     name: "No Repeats Table",
-    url: "/newrecipe",
+    url: "/norepeats",
     cName: "nav-links",
   },
   {
@@ -15,13 +15,13 @@ export const NavBarItems = [
     cName: "nav-links",
   },
   {
-    name: "Top Searches Graph",
-    url: "/barchart",
+    name: "Zero Hits Table",
+    url: "/zerohitstable",
     cName: "nav-links",
   },
   {
-    name: "Zero Hits Table",
-    url: "/zerohitstable",
+    name: "Top Searches Graph",
+    url: "/barchart",
     cName: "nav-links",
   },
 ];

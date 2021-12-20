@@ -9,6 +9,8 @@ import NavBar from "./components/NavBar/NavBar";
 import BarChartPage from "./components/BarChartPage/BarChartPage";
 import SortedTablePage from "./components/SortedTablePage/SortedTablePage";
 import ZeroHitsTablePage from "./components/ZeroHitsTablePage/ZeroHitsTablePage";
+import NoRepeatsPage from "./components/NoRepeatsPage/NoRepeatsPage";
+
 ReactDOM.render(
   <Router>
     <Header />
@@ -18,6 +20,7 @@ ReactDOM.render(
       <Route path="barchart" element={<BarChartPage />} />
       <Route path="sortedtable" element={<SortedTablePage />} />
       <Route path="zerohitstable" element={<ZeroHitsTablePage />} />
+      <Route path="norepeats" element={<NoRepeatsPage />} />
     </Routes>
   </Router>,
   document.getElementById("root")

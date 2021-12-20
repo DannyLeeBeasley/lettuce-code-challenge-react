@@ -5,9 +5,9 @@ import { removeDuplicates } from "../../utils";
 import "../../TablePage.css";
 
 
-function ZeroHitsTablePage() {
+function NoRepeatsPage() {
   const [highlighted, setHighlighted] = useState(false);
-  const [zeroHitSearches, setZeroHitSearches] = useState([]);
+  const [noRepeatsSearches, setNoRepeatsSearches] = useState([]);
   return (
     <div>
       <div className="table-page">
@@ -33,15 +33,10 @@ function ZeroHitsTablePage() {
                 const text = await file.text();
                 const result = parse(text, { header: true });
                 let noDuplicateArr = removeDuplicates(result.data);
-                let noDupZeroHitsArr = noDuplicateArr.filter(
-                  (searchobj) => searchobj.hits === "0"
-                );
-                // noDupZeroHitsArr.sort(
-                //   (a, b) => {
-                //   return a.query - b.query;
+                // noDuplicateArr.sort((a, b) => {
+                //   return parseInt(b.hits, 10) - parseInt(a.hits, 10);
                 // });
-                // console.log(noDupZeroHitsArr);
-                setZeroHitSearches(noDupZeroHitsArr);
+                setNoRepeatsSearches(noDuplicateArr);
               });
           }}
         >
@@ -52,7 +47,7 @@ function ZeroHitsTablePage() {
             <th>Search Term</th>
             <th>Search Hits</th>
           </tr>
-          {zeroHitSearches.map((search) => (
+          {noRepeatsSearches.map((search) => (
             <TableRow
               key={search.index}
               className="table-row"
@@ -66,4 +61,4 @@ function ZeroHitsTablePage() {
   );
 }
 
-export default ZeroHitsTablePage;
+export default NoRepeatsPage;
