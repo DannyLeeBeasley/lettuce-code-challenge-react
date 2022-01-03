@@ -46,6 +46,9 @@ function ZeroHitsTablePage() {
         >
           Drop CSV File Here
         </div>
+        <div>
+          <h3>Search Queries With Zero Hits</h3>
+        </div>
         <table>
           <thead className="table-header">
             <tr>

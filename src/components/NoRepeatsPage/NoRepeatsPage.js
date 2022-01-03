@@ -41,6 +41,9 @@ function NoRepeatsPage() {
         >
           Drop CSV File Here
         </div>
+        <div>
+          <h3>All Unique Search Queries</h3>
+        </div>
         <table>
           <thead className="table-header">
             <tr>

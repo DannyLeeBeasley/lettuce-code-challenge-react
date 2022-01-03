@@ -77,8 +77,8 @@ function HomePage() {
         Drop CSV File Here
       </div>
       <div>
-        <button onClick={() => setButtonClicked((prevButtonClicked) => !prevButtonClicked)}>
-          {buttonClicked ? "Show All Search Terms" : "Show Searches With Zero Hits"}
+        <button className={buttonClicked ? "zero-hits-button" : "show-all-button"} onClick={() => setButtonClicked((prevButtonClicked) => !prevButtonClicked)}>
+          {buttonClicked ? "Show All Searches" : "Show Searches With Zero Hits"}
         </button>
       </div>
       <div className="search-term-input-container">
@@ -86,13 +86,16 @@ function HomePage() {
           className="search-term-input"
           type="text"
           name="searchTermInput"
-          placeholder="Type search term to tally number of times searched"
+          placeholder="Type here search to search by query..."
           value={searchTerm}
           onChange={(e) => {
             setSearchTerm(e.target.value);
             console.log(searchTerm);
           }}
         />
+      </div>
+      <div className="table-tite">
+        <h3>{!buttonClicked ? "All Unique Search Queries" : "Search Queries With Zero Hits"}</h3>
       </div>
       <table>
         <tr className="table-header">

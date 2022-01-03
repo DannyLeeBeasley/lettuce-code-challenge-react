@@ -36,6 +36,9 @@ function AllSearchesTablePage() {
       >
         Drop CSV File Here
       </div>
+      <div>
+        <h3>All Searches Including Duplicate Queries</h3>
+      </div>
       <table>
         <thead className="table-header">
           <tr>

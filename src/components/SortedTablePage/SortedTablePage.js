@@ -41,6 +41,9 @@ function SortedTablePage() {
         >
           Drop CSV File Here
         </div>
+        <div>
+          <h3>Search Queries Sorted By Hits</h3>
+        </div>
         <table>
           <thead className="table-header">
             <tr>
