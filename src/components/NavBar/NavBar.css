@@ -21,8 +21,8 @@
 
 .nav-menu {
   display: flex;
-  grid-template-columns: repeat(5, auto);
-  grid-gap: 10px;
+  /* grid-template-columns: repeat(5, auto); */
+  /* grid-gap: 10px; */
   text-align: center;
   width: 90vw;
   justify-content: end;
@@ -81,8 +81,9 @@
   .nav-links {
     text-align: center;
     padding: 2rem;
-    width: 100%;
+    width: 70%;
     display: table;
+    margin: auto;
   }
 
   .nav-links:hover {

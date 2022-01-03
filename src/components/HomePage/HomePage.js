@@ -3,12 +3,38 @@ import { parse } from "papaparse";
 import TableRow from "../TableRow/TableRow";
 import "../../TablePage.css";
 import "./HomePage.css";
+import { countSearchTerms } from "../../utils.js";
 
 function HomePage() {
   const [highlighted, setHighlighted] = useState(false);
-  const [allSearches, setAllSearches] = useState([]);
+  const [searchTermHits, setSearchTermHits] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
   const [numberOfSearches, setNumberOfSearches] = useState("");
+  const [buttonClicked, setButtonClicked] = useState(false);
+
+  const searchTermsToDisplay = searchTerm
+    ? searchTermHits
+        .filter((searchedTerm) => {
+          return searchedTerm.query
+            .toLowerCase()
+            .includes(searchTerm.toLowerCase());
+        })
+        .filter((searchedTerm) => {
+          if (!buttonClicked) {
+            return true;
+          } else {
+            return searchedTerm.hits === "0";
+          }
+        })
+    : searchTermHits.filter((searchedTerm) => {
+        if (!buttonClicked) {
+          return true;
+        } else {
+          return searchedTerm.hits === "0";
+        }
+      });
+
+      console.log(searchTermsToDisplay)
 
   return (
     <div className="table-page">
@@ -33,15 +59,29 @@ function HomePage() {
             .forEach(async (file) => {
               const text = await file.text();
               const result = parse(text, { header: true });
-              setAllSearches(result.data);
+              let searchTermCount = countSearchTerms(result.data);
+              let searchTermIndex = 0;
+              let searchTermCountArr = [];
+              searchTermCount.forEach((searchHits, searchTerm) => {
+                searchTermCountArr.push({
+                  index: searchTermIndex,
+                  times_searched: searchHits.count,
+                  query: searchTerm,
+                  hits: searchHits.hits,
+                });
+              });
+              setSearchTermHits(searchTermCountArr);
             });
-
         }}
       >
         Drop CSV File Here
       </div>
+      <div>
+        <button onClick={() => setButtonClicked((prevButtonClicked) => !prevButtonClicked)}>
+          {buttonClicked ? "Show All Search Terms" : "Show Searches With Zero Hits"}
+        </button>
+      </div>
       <div className="search-term-input-container">
-        {/* <label>Search Term:</label> */}
         <input
           className="search-term-input"
           type="text"
@@ -51,39 +91,23 @@ function HomePage() {
           onChange={(e) => {
             setSearchTerm(e.target.value);
             console.log(searchTerm);
-            setNumberOfSearches(
-              allSearches.filter(
-                (searchObj) =>
-                  searchObj.query.toLowerCase() === searchTerm.toLowerCase()
-              ).length.toString()
-            );
           }}
         />
       </div>
-      <div className="search-term-tally-container">
-        <div className="search-term-display-container">
-          <label>Search Term:</label>
-          <p>{searchTerm}</p>
-        </div>
-        <div className="search-term-count-container">
-          <label>Number Of Searches:</label>
-          <p>{numberOfSearches}</p>
-        </div>
-      </div>
-      {/* <table>
+      <table>
         <tr className="table-header">
           <th>Search Term</th>
-          <th>Search Hits</th>
+          <th>Times Searched</th>
         </tr>
-        {allSearches.map((search) => (
+        {searchTermsToDisplay.map((search) => (
           <TableRow
             key={search.index}
             className="table-row"
             query={search.query}
-            hits={search.hits}
+            hits={search.times_searched}
           />
         ))}
-      </table> */}
+      </table>
     </div>
   );
 }

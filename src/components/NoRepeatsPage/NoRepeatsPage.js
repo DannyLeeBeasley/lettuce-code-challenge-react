@@ -32,9 +32,9 @@ function NoRepeatsPage() {
                 const text = await file.text();
                 const result = parse(text, { header: true });
                 let noDuplicateArr = removeDuplicates(result.data);
-                // noDuplicateArr.sort((a, b) => {
-                //   return parseInt(b.hits, 10) - parseInt(a.hits, 10);
-                // });
+                noDuplicateArr.sort((a, b) => {
+                  return parseInt(b.hits, 10) - parseInt(a.hits, 10);
+                });
                 setNoRepeatsSearches(noDuplicateArr);
               });
           }}

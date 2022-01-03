@@ -18,11 +18,15 @@ class NavBar extends Component {
             className={this.state.clicked ? "fas fa-times" : "fas fa-bars"}
           ></i>
         </div>
-        <div className={this.state.clicked ? 'nav-menu active' : 'nav-menu'}>
+        <div className={this.state.clicked ? "nav-menu active" : "nav-menu"}>
           {NavBarItems.map((navItem, index) => {
             return (
               <span key={index}>
-                <Link className={navItem.cName} to={navItem.url}>
+                <Link
+                  onClick={this.handleClick}
+                  className={navItem.cName}
+                  to={navItem.url}
+                >
                   {navItem.name}
                 </Link>
               </span>
